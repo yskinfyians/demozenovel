@@ -1,0 +1,29 @@
+.view-container {
+  padding: 20px;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+/* Style for table header cells */
+.table-container th {
+  background-color: #f0f0f0; /* Light gray background */
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Style for table data cells */
+.table-container td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0; /* Light gray border */
+}
+
+/* Apply alternate background color to even rows */
+.table-container tr:nth-child(even) {
+  background-color: #f9f9f9; /* Lighter gray background */
+}
+.back-button-container {
+  margin-top: 20px;
+  text-align: center;
+}

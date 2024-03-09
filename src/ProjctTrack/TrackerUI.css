@@ -1,0 +1,21 @@
+.tracker-container {
+  padding: 20px;
+}
+
+.search-input {
+  background-color: #ffffff;
+}
+
+.select-column {
+  background-color: #ffffff;
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+.table-header-cell {
+  background-color: #f0f0f0; /* Light gray background */
+  font-weight: bold;
+  padding: 10px;
+}

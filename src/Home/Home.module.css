@@ -1,0 +1,50 @@
+.graph {
+  border: 2px solid grey;
+  width: 100%;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.empAward {
+  border: 2px solid grey;
+  width: 80%;
+  margin-top: 50px;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 40px;
+  padding: 10px;
+}
+
+.graphSummary {
+  display: flex;
+  flex: wrap;
+  justify-content: space-evenly;
+}
+.largericon {
+  font-size: 24px; /* Adjust size as needed */
+}
+/* RecentProjectsTable.module.css */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-head {
+  background-color: #007bff; /* Header background color */
+  color: white; /* Header text color */
+}
+
+.table-row {
+  border-bottom: 1px solid #0e0e0e; /* Border between rows */
+}
+
+.table-cell {
+  padding: 12px;
+  text-align: left;
+  border-right: 1px solid #dee2e6; /* Border between cells */
+  border-bottom: 1px solid #dee2e6; /* Border for cells */
+}
+
+/* Remove right border for last cell in row */
+.table-cell:last-child {
+  border-right: none;
+}
