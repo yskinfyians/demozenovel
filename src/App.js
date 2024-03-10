@@ -19,6 +19,8 @@ import { loginSelector } from "./redux/LoginReducer";
 import Home from "./Home/Home";
 import TrackerUI from "./ProjctTrack/TrackerUI";
 import ViewDesign from "./ViewTracker/ViewDesign";
+import NewProject from "./NewProject/NewProject";
+import EditDesign from "./ViewTracker/EditDesign";
 // import Navbar from "./Navbar/Navbar";
 
 function App() {
@@ -61,6 +63,8 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="projectTracking" element={<TrackerUI />} />
           <Route path="viewTracker" element={<ViewDesign />} />
+          <Route path="addNewProject" element={<NewProject />} />
+          <Route path="editProject" element={<EditDesign />} />
         </Route>
       </Routes>
     </div>

@@ -17,12 +17,47 @@
 .table-container td {
   padding: 10px;
   border-bottom: 1px solid #e0e0e0; /* Light gray border */
+  padding: 20px;
 }
 
 /* Apply alternate background color to even rows */
 .table-container tr:nth-child(even) {
   background-color: #f9f9f9; /* Lighter gray background */
 }
+.edit-container {
+  padding: 20px;
+  max-width: 100%; /* Limit the container width to the display width */
+  overflow-x: hidden; /* Hide horizontal overflow */
+  margin: 0 auto; /* Center the container */
+}
+
+.table-scroll-container {
+  max-width: 100%; /* Maximum width for the table container */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.table-container {
+  margin-top: 20px; /* Add margin-top to create some space between the table and other content */
+}
+
+/* Style for table header cells */
+.table-container th {
+  background-color: #f0f0f0; /* Light gray background */
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* Style for table data cells */
+.table-container td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0; /* Light gray border */
+}
+
+/* Apply alternate background color to even rows */
+.table-container tr:nth-child(even) {
+  background-color: #f9f9f9; /* Lighter gray background */
+}
+
 .back-button-container {
   margin-top: 20px;
   text-align: center;

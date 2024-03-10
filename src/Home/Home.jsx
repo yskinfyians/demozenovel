@@ -163,6 +163,8 @@ function Home() {
           </div>
           <div>
             <div className={styles.empAward}>
+              <h4 style={{ padding: "10px" }}>Wall of Fame </h4>
+
               <h5 style={{ padding: "10px" }}>Employee Of the Month : </h5>
               <div style={{ textAlign: "center", marginTop: "30px" }}>
                 <MilitaryTechIcon sx={{ fontSize: 100 }} />

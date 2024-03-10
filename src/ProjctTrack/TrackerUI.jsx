@@ -271,11 +271,13 @@ const TrackerUI = () => {
 
   const handleEditClick = (rowData) => {
     console.log("Edit clicked:", rowData);
+    navigate('/editProject');
   };
 
   const handleRegisterProject = () => {
     console.log("Register New Project button clicked");
     // Add your navigation logic here to navigate to the registration page
+    navigate('/addNewProject')
   };
 
   const itemsPerPage = 10;
