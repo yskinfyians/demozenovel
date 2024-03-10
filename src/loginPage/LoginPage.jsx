@@ -22,7 +22,7 @@ function LoginPage() {
     email: "",
     password: "",
   });
-
+  <LoginPage />;
   const navigate = useNavigate();
   const dispatch = useDispatch();
   //   const selector = useSelector();
@@ -68,7 +68,7 @@ function LoginPage() {
       setFormData({ email: "", password: "" });
       toast.error("Login failed. Please check your credentials.");
       dispatch(logged({ token: "test", loggedIn: true }));
-      navigate("home");
+      navigate("/home");
     }
   };
 

@@ -51,8 +51,12 @@ function App() {
         <Route
           exact
           path="/"
-          element={loggedIn ? <Navigate to="/home" /> : <LoginPage />}
+          element={
+            loggedIn ? <Navigate to="/home" /> : <Navigate to="/login" />
+          }
         />
+
+        <Route exact path="/login" element={!loggedIn && <LoginPage />} />
 
         <Route exact path="/" element={<ProtectedRoute />}>
           <Route exact path="home" element={<Home />} />
