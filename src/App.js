@@ -49,19 +49,18 @@ function App() {
     <div className="App">
       <Routes>
         <Route
-          exact
           path="/"
           element={
             loggedIn ? <Navigate to="/home" /> : <Navigate to="/login" />
           }
         />
 
-        <Route exact path="/login" element={!loggedIn && <LoginPage />} />
+        <Route path="/login" element={!loggedIn && <LoginPage />} />
 
-        <Route exact path="/" element={<ProtectedRoute />}>
-          <Route exact path="home" element={<Home />} />
-          <Route exact path="projectTracking" element={<TrackerUI />} />
-          <Route exact path="viewTracker" element={<ViewDesign />} />
+        <Route path="/" element={<ProtectedRoute />}>
+          <Route path="home" element={<Home />} />
+          <Route path="projectTracking" element={<TrackerUI />} />
+          <Route path="viewTracker" element={<ViewDesign />} />
         </Route>
       </Routes>
     </div>
