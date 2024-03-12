@@ -19,8 +19,8 @@ import { useSelector } from "react-redux";
 function LoginPage() {
   // Define initial state
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    username: "",
+    encodedPassword: "",
   });
   <LoginPage />;
   const navigate = useNavigate();
@@ -34,41 +34,45 @@ function LoginPage() {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Check for empty fields
-    if (!formData.email.trim() || !formData.password.trim()) {
+    if (!formData.username.trim() || !formData.encodedPassword.trim()) {
       toast.error("Email and password are required.");
       return;
     }
-    console.log(formData);
-    // Dummy backend endpoint
-    const url = "https://dummybackend.com/login"; // Replace with actual backend endpoint
+
+    const url = "https://spring-render-4dt2.onrender.com/login/newLogin";
 
     try {
+      const base64Password = btoa(formData.encodedPassword); // Encoding password to base64
       const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          username: formData.username,
+          encodedPassword: base64Password,
+        }),
       });
 
       if (response.ok) {
-        // Handle success
+        const responseData = await response.json();
+        if (responseData.statusCode !== "200") {
+          toast.error("Login failed. Please check your credentials.");
+          return;
+        }
+
         toast.success("Login successful!");
+        setFormData({ username: "", encodedPassword: "" });
+        dispatch(logged({ token: "test", loggedIn: true }));
+        navigate("/home");
       } else {
-        // Handle login error
         toast.error("Login failed. Please check your credentials.");
       }
     } catch (error) {
       console.error("Error:", error);
-      setFormData({ email: "", password: "" });
-      toast.error("Login failed. Please check your credentials.");
-      dispatch(logged({ token: "test", loggedIn: true }));
-      navigate("/home");
     }
   };
 
@@ -106,22 +110,22 @@ function LoginPage() {
               <MDBInput
                 wrapperClass="mb-4"
                 label="Email address"
-                id="email"
-                name="email"
-                type="email"
+                id="username"
+                name="username"
+                type="username"
                 size="lg"
-                value={formData.email}
+                value={formData.username}
                 onChange={handleInputChange}
                 required
               />
               <MDBInput
                 wrapperClass="mb-4"
                 label="Password"
-                id="password"
-                name="password"
+                id="encodedPassword"
+                name="encodedPassword"
                 type="password"
                 size="lg"
-                value={formData.password}
+                value={formData.encodedPassword}
                 onChange={handleInputChange}
                 required
               />
